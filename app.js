@@ -1,10 +1,8 @@
-var express = require('express')
-var path = require('path')
-//var favicon = require('serve-favicon');
-//var logger = require('morgan');
-//var cookieParser = require('cookie-parser');
-const express = require("express")
+const express = require('express')
 var app = express()
+
+// const path = require('path')
+
 const bodyParser = require("body-parser")
 const user = require('./routes/user.js')
 const ingredient = require('./routes/ingredient.js')
@@ -17,10 +15,11 @@ const PORT = process.env.PORT || 8080
 
 app.use(express.static("public"))
 app.use(bodyParser.json())
-app.use('/comments', comments)
-app.use('/posts', posts)
-app.use('/users', users)
-// app.use('/website', website) -- not using!!
+app.use('/user', user)
+app.use('/ingredient', ingredient)
+app.use('/recipe', recipe)
+app.use('/step', step)
+app.use('/review', review)
 
 
 app.listen(PORT, () => console.log('Shhhh ... listening on port  '  + PORT ))
