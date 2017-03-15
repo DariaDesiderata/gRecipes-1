@@ -9,3 +9,8 @@ router.get('/', function (req, res) {
     res.send(review);
   });
 });
+
+
+
+
+module.exports = router;

@@ -9,3 +9,9 @@ router.get('/', function (req, res) {
     res.send(step);
   });
 });
+
+
+
+
+
+module.exports = router;
