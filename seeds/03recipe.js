@@ -21,6 +21,14 @@ exports.seed = function(knex, Promise) {
           servings: 4,
           user_id: 'julia@child.com'
         },
+        {
+          id: 3,
+          title: 'Ginger Snaps',
+          image: 'http://assets.epicurious.com/photos/5609a6246a59cdb91b5ff638/6:4/w_620%2Ch_413/355417_hires.jpg',
+          description: "This is my grandma's family gingersnap recipe.",
+          servings: 32,
+          user_id: 'julia@child.com'
+        },
       ]);
     });
 };

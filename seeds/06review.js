@@ -16,7 +16,13 @@ exports.seed = function(knex, Promise) {
           stars: 5,
           recipe_id: 2,
           user_id: 'suzie@yahoo.com'
-        }
+        },
+        {
+          body: 'Best burrito in town!',
+          stars: 3,
+          recipe_id: 2,
+          user_id: 'joe@aol.com'
+        },
       ]);
     });
 };

@@ -3,12 +3,12 @@ const router = express.Router();
 const knex = require('../db/knex');
 
 // get
-router.get('/', function (req, res) {
-  knex('recipe')
-  .then(recipe => {
-    res.send(recipe);
-  });
-});
+// router.get('/', function (req, res) {
+//   knex('recipe')
+//   .then(recipe => {
+//     res.send(recipe);
+//   });
+// });
 
 // get all plus average of stars
 // group by
