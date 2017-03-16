@@ -14,16 +14,16 @@ router.get('/', function (req, res) {
 // group by
 // needs separate identifier
 
-// router.get('/', function (req, res) {
-//   knex('recipe')
-//   .groupBy()
-//   .join('review', {'recipe.id': 'review.recipe_id'})
-//   .avg('stars')
-//   .select('recipe.*')
-//   .then(recipes => {
-//     res.send(recipes);
-//   });
-// });
+router.get('/', function (req, res) {
+  knex('recipe')
+  .join('review', {'recipe.id': 'review.recipe_id'})
+  .avg('stars')
+  .groupBy('recipe.id')
+  .select('recipe.*')
+  .then(recipes => {
+    res.send(recipes);
+  });
+});
 
 // groupBy — .groupBy(*names)
 // Adds a group by clause to the query.

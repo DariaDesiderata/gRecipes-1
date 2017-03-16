@@ -12,8 +12,8 @@ router.get('/', function (req, res) {
 
 // post
 router.post('/', (req, res, next) => {
-  const newRecipeId = req.params.recipe_id
-  const newIngredientId = req.params.ingredient_id
+  //const newRecipeId = req.params.recipe_id
+  //const newIngredientId = req.params.ingredient_id
   const newQuantity = req.body.quantity
   const newUom = req.body.uom
   knex('ingredient_recipe')
