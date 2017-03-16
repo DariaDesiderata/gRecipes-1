@@ -29,11 +29,11 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // var id = Number(req.params.id)
   knex('recipe')
-  // .first()
   .where('recipe.id', Number(req.params.id))
   .join('review', {'recipe.id': 'review.recipe_id'})
   .avg('stars')
   .groupBy('recipe.id')
+  .first()
   .select('recipe.*')
   .then(recipe => {
     res.send(recipe)
