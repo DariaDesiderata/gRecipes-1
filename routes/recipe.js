@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
   // var id = Number(req.params.id)
   knex('recipe')
   .where('recipe.id', Number(req.params.id))
-  .join('review', {'recipe.id': 'review.recipe_id'})
+  .leftJoin('review', {'recipe.id': 'review.recipe_id'})
   .avg('stars')
   .groupBy('recipe.id')
   .first()

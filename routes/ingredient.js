@@ -23,9 +23,7 @@ router.get('/:id', (req, res) => {
   .then(results => {
     res.send(results)
   })
-
-
-  })
+})
 
 // post
 router.post('/', (req, res, next) => {
