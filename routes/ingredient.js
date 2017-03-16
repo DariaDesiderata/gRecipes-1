@@ -14,7 +14,9 @@ router.get('/:id', (req, res) => {
   knex('ingredient')
   .join('ingredient_recipe', 'ingredient.id', 'ingredient_recipe.ingredient_id')
   .join('recipe', 'ingredient_recipe.recipe_id', 'recipe.id')
+  .where('recipe.id', Number(req.params.id))
   .select(
+    'recipe.id as id',
     'recipe.title as recipe',
     'ingredient.name as name',
     'ingredient_recipe.quantity as quantity',
