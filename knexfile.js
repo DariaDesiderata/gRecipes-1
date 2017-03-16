@@ -9,12 +9,6 @@ module.exports = {
 
     production: {
         client: 'pg',
-        connection: process.env.DATABASE_URL,
-        migrations: {
-          directory: __dirname + '/migrations'
-        },
-        seeds: {
-          directory: __dirname + '/seeds'
-        }
+        connection: process.env.DATABASE_URL
     }
 };
