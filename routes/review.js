@@ -10,6 +10,15 @@ router.get('/', function (req, res) {
   });
 });
 
+router.get('/:recipe_id', (req, res) => {
+  knex('review')
+  .where('recipe_id', Number(req.params.recipe_id))
+  .select('review.*')
+  .then(review => {
+    res.send(review)
+  })
+})
+
 // post
 router.post('/', (req, res, next) => {
   const newBody = req.body.body
