@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const knex = require('../db/knex');
 
+// original GET
 // get
 // router.get('/', function (req, res) {
 //   knex('recipe')
@@ -14,9 +15,9 @@ const knex = require('../db/knex');
 // group by
 // needs separate identifier
 
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
   knex('recipe')
-  .join('review', {'recipe.id': 'review.recipe_id'})
+  .leftJoin('review', {'recipe.id': 'review.recipe_id'})
   .avg('stars')
   .groupBy('recipe.id')
   .select('recipe.*')
@@ -25,13 +26,21 @@ router.get('/', function (req, res) {
   });
 });
 
-// groupBy — .groupBy(*names)
-// Adds a group by clause to the query.
-//
-// knex('users').groupBy('count')
-// Outputs:
-// select * from `users` group by `count`
-
+// router.get('/:id', (req, res) => {
+//   // var id = Number(req.params.id)
+//   knex('recipe')
+//   .first()
+//   .where({
+//     id: Number(req.params.id)
+//   })
+//   .join('review', {'recipe.id': 'review.recipe_id'})
+//   .avg('stars')
+//   .groupBy('recipe.id')
+//   .select('recipe.*')
+//   .then(recipe => {
+//     res.send(recipe)
+//   })
+// })
 
 
 // post

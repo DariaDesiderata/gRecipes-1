@@ -8,7 +8,7 @@ exports.seed = function(knex, Promise) {
         {
           id: 1,
           title: 'Granola',
-          image: 'https://unsplash.com/search/granola?photo=DfbrRpHTLy0',
+          image: 'http://assets.epicurious.com/photos/54b2fe603edeef84363b646a/6:4/w_620%2Ch_413/359317_everyday-granola_1x1.jpg',
           description: 'This recipe is a granola base to which you can add whatever dried fruit, nuts, or other tasty bits make you happy. Feel free to tweak this with other spices, a little less honey, more salt—it’s quite forgiving, and customizing your own blend is the fun of making your own.',
           servings: 16,
           user_id: 'alton@brown.com'
@@ -24,7 +24,7 @@ exports.seed = function(knex, Promise) {
         {
           id: 3,
           title: 'Ginger Snaps',
-          image: 'http://assets.epicurious.com/photos/5609a6246a59cdb91b5ff638/6:4/w_620%2Ch_413/355417_hires.jpg',
+          image: 'http://assets.epicurious.com/photos/561025c7f3a00aeb2f1d7a02/master/pass/103156.jpg',
           description: "This is my grandma's family gingersnap recipe.",
           servings: 32,
           user_id: 'julia@child.com'
