@@ -3,12 +3,22 @@ const router = express.Router();
 const knex = require('../db/knex');
 
 // get one
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
   knex('step')
   .then(step => {
     res.send(step);
   });
 });
+
+router.get('/:recipe_id', (req, res) => {
+  knex('step')
+  .where('recipe_id', Number(req.params.recipe_id))
+  .select('step.*')
+  .then(step => {
+    res.send(step)
+  })
+})
+
 
 // post
 router.post('/', (req, res, next) => {
