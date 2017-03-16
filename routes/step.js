@@ -6,9 +6,9 @@ const knex = require('../db/knex');
 router.get('/', (req, res) => {
   knex('step')
   .then(step => {
-    res.send(step);
-  });
-});
+    res.send(step)
+  })
+})
 
 router.get('/:recipe_id', (req, res) => {
   knex('step')

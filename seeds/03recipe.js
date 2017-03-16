@@ -32,7 +32,7 @@ exports.seed = function(knex, Promise) {
         {
           id: 4,
           title: 'Guacamole',
-          image: 'http://assets.epicurious.com/photos/561025c7f3a00aeb2f1d7a02/master/pass/103156.jpg',
+          image: 'http://assets.epicurious.com/photos/54bac6802a4b69f8647e9599/6:4/w_996%2Ch_664%2Cc_limit/celery-spiked-guacamole-chiles-6x4.jpg',
           description: "Everything goes better with guac!",
           servings: 4,
           user_id: 'alton@brown.com'

@@ -3,12 +3,12 @@ const router = express.Router();
 const knex = require('../db/knex');
 
 // get one
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
   knex('ingredient_recipe')
   .then(ingredient_recipe => {
-    res.send(ingredient_recipe);
-  });
-});
+    res.send(ingredient_recipe)
+  })
+})
 
 // post
 router.post('/', (req, res, next) => {
