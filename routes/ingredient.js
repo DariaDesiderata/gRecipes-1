@@ -10,6 +10,22 @@ router.get('/', function (req, res) {
   });
 });
 
+router.get('/:id', (req, res) => {
+  knex('ingredient')
+  .join('ingredient_recipe', 'ingredient.id', 'ingredient_recipe.ingredient_id')
+  .join('recipe', 'ingredient_recipe.recipe_id', 'recipe.id')
+  .select(
+    'recipe.title as recipe',
+    'ingredient.name as name',
+    'ingredient_recipe.quantity as quantity',
+    'ingredient_recipe.uom as uom'
+  )
+  .then(results => {
+    res.send(results)
+  })
+
+
+  })
 
 // post
 router.post('/', (req, res, next) => {
@@ -64,7 +80,6 @@ router.put('/:id', (req, res, next) => {
 
 // delete
 router.delete('/:id', (req, res, next) => {
-  // const userEmail = req.params.email
   knex('ingredient')
   .del()
   .where({

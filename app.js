@@ -8,7 +8,7 @@ const user = require('./routes/user.js')
 const ingredient = require('./routes/ingredient.js')
 const recipe = require('./routes/recipe.js')
 const step = require('./routes/step.js')
-//const ingredient_recipe = require('./routes/ingredient_recipe.js')
+const ingredient_recipe = require('./routes/ingredient_recipe.js')
 
 const review = require('./routes/review.js')
 const cors = require('cors')
@@ -24,7 +24,7 @@ app.use('/ingredient', ingredient)
 app.use('/recipe', recipe)
 app.use('/step', step)
 app.use('/review', review)
-//app.use('/ingredient_recipe', ingredient_recipe)
+app.use('/ingredient_recipe', ingredient_recipe)
 
 
 app.listen(PORT, () => console.log('Shhhh ... listening on port  '  + PORT ))

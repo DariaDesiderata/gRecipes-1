@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
   })
 })
 
+
 // post
 router.post('/', (req, res, next) => {
   //const newRecipeId = req.params.recipe_id
@@ -86,3 +87,5 @@ router.delete('/:recipe_id', (req, res, next) => {
     })
   })
 })
+
+module.exports = router;
